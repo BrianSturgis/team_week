@@ -1,3 +1,13 @@
 import {Cloudinary} from "cloudinary-core";
 
-let newUpload = new cloudinary.Cloudinary({cloud_name:`${process.env.CLOUD_NAME}`, api_key: `${process.env.COMPRESS_KEY}`, api_secret: `${process.env.COMPRESS_SECRET}`, secure : true});
+export default function openWidget(){
+	let myWidget = cloudinary.createUploadWidget({
+		cloudName:`${process.env.CLOUD_NAME}`,
+		uploadPreset: `${process.env.UPLOAD_PRESET}`
+	}, (error, result) => {
+		if(!error && result && result.event === "success"){
+			console.log('Done! Here is the image info: ', result.info);
+		}
+	});
+	myWidget.open();
+}
