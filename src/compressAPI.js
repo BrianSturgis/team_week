@@ -11,16 +11,25 @@ export function openWidget(){
 	}, (error, result) => {
 		if(!error && result && result.event === "success"){
 			console.log('Done! Here is the image info: ', result.info);
-			imgTransform(result.info);
+			localStorage.setItem('resultInfo', JSON.stringify(result.info));
 		}
 	});
 	myWidget.open();
 }
 
 // Function to transform img aspect ratio and web opitmization 
-function imgTransform(url){
+export function imgTransform(url){
 	console.log(url.secure_url, url.bytes);
-	const compressed = cl.imageTag(`${url.public_id}.jpg`, {quality: "auto"}).toHtml();
-	console.log(compressed);
+	const compressedImg = cl.imageTag(`${url.public_id}.jpg`, {quality: 50}).toHtml();
+	console.log(compressedImg);
 }
-// Function to display the change in file size to DOM
+
+export function vidTransform (url){
+	const compressedVid = cl.videoTag(`${url.public_id}.mp4`, {quality:50}).toHtml();
+	console.log(compressedVid);
+}
+// Check File type of whats in the Local Storage
+
+// function typeCheck (){
+
+// }
