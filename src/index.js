@@ -14,9 +14,9 @@ const TOKEN_PATH = 'token.json';
 fs.readFile('credentials.json', (err, content) => {
   if (err) return console.log('Error loading client secret file:', err);
   // Authorize a client with credentials, then call the Google Drive API.
-  authorize(JSON.parse(content), listFiles);
+  // authorize(JSON.parse(content), listFiles);
   // authorize(JSON.parse(content), getFile);
-  // authorize(JSON.parse(content), uploadFile);
+  authorize(JSON.parse(content), uploadFile);
 });
 
 /**
@@ -35,7 +35,7 @@ function authorize(credentials, callback) {
     if (err) return getAccessToken(oAuth2Client, callback);
     oAuth2Client.setCredentials(JSON.parse(token));
     callback(oAuth2Client);
-    // callback(oAuth2Client, '12QJzz3jhJDZLjB_5lfwL1OXxOQTCHOSrDnUIcDcUFX8');
+    // callback(oAuth2Client, '1WIUxxsjx46ssrDIchnPW5TwM4p8ueVf1');
   });
 }
 
@@ -96,11 +96,11 @@ function listFiles(auth) {
   function uploadFile(auth) {
     const drive = google.drive({ version: 'v3', auth });
     var fileMetadata = {
-        'name': 'test22.jpeg'
+        'name': 'belle.jpg'
     };
     const media = {
         mimeType: 'image/jpeg',
-        body: fs.createReadStream('test22.jpeg')
+        body: fs.createReadStream('belle.jpg')
     };
     drive.files.create({
         resource: fileMetadata,
@@ -114,6 +114,13 @@ function listFiles(auth) {
             console.log('File Id: ', res.data.id);
         }
     });
+  }
+    function getFile(auth, fileId) {
+      const drive = google.drive({ version: 'v3', auth });
+      drive.files.get({ fileId: fileId, fields: '*' }, (err, res) => {
+          if (err) return console.log('The API returned an error: ' + err);
+          console.log(res.data); c
+      });
 }
 
   
