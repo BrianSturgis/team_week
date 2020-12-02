@@ -20,13 +20,13 @@ export function openWidget(){
 // Function to transform img aspect ratio and web opitmization 
 export function imgTransform(url){
 	console.log(url.secure_url, url.bytes);
-	const compressedImg = cl.imageTag(`${url.public_id}.jpg`, {quality: 50}).toHtml();
-	console.log(compressedImg);
+	const compressedImg = cl.url(`${url.public_id}.jpg`, {quality: "auto", flags: "attachment"});
+	return compressedImg;
 }
 
 export function vidTransform (url){
-	const compressedVid = cl.videoTag(`${url.public_id}.mp4`, {quality:50}).toHtml();
-	console.log(compressedVid);
+	const compressedVid = cl.video_url(`${url.public_id}.mp4`, {quality: "auto", flags: "attachment"});
+	return compressedVid;
 }
 // Check File type of whats in the Local Storage
 
