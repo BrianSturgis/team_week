@@ -8,11 +8,6 @@
 //Description goes here.
 
 ## Specs
-Checkout Specs
-
-| Test  | Input | Output  |
-| :---: | :---: |  :---:  |
-
 
 
 ## Setup/Installation Requirements
