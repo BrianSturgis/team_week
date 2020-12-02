@@ -1,14 +1,13 @@
-# _File Compression_
+# _Nucleus Compression_
 
-#### _A program to compress files for social media._ _Nov. 30, 2020_
+#### _A program to compress files for various websites._ _Dec. 2, 2020_
 
-#### By _**Garrett Brown**_
+#### By _**Chelsea Becker, Max Brockbank, Garrett Brown, Glen Buck, Brian Sturgis**_
 
 ## Description
-//Description goes here.
-
-## Specs
-
+Nucleus Compression is a program that allows a user to upload a photo, and compress it. 
+This is done in order to allow the photo to fit specifications for specific 
+websites, including storage sights and social media.
 
 ## Setup/Installation Requirements
 
@@ -16,10 +15,11 @@
 * _Navigate to Desktop._
 * _Type "git clone https://github.com/MaxBrockbank/team_week.git" into command line and press ENTER._
 * _Navigate to "team_week" folder and enter "code ." into command line and press ENTER to open in VS Code._
-*  // Insert API instructions HERE
+* _Create folder titled ".env" in root directory of program. This is needed to store the key for the API._
+    * _Create a  
 * _Type "npm install" into command line and press ENTER._
 * _Type "npm run build" into command line and press ENTER._
-* _Type "npm run start" into command line and press ENTER to run program."
+* _Type "npm run start" into command line and press ENTER to run program._
 
 
 ## Technologies Used

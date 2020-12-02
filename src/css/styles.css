@@ -1,8 +1,14 @@
 body {
-  background-color:aqua;
+  background-image: url("https://cdn.discordapp.com/attachments/783008581271552064/783816572606349402/teen_week_final_ui_splashpage.jpg");
+  background-color: #cccccc;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
 }
 
 #transform{
   display: none;
 }
-
