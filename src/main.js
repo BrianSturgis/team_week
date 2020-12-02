@@ -2,11 +2,14 @@ import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
+import FlickrService from './services/FlickrService';
 
 $(document).ready(function() {
-  $("form#submit").submit(function(event) {
-  event.preventDefault();
-  const img = $("input#myFile").val();
-  console.log(`${img}`);
+  $("#request-token").click(function(event) {
+    event.preventDefault();
+    (async function() {
+      const response = await FlickrService.requestToken();
+      console.log(response);
+    })();
   });
 });

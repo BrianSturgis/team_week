@@ -1,18 +1,14 @@
-<!DOCTYPE html> 
-<html> 
-<head> 
-  <title> 
-      Async file upload with jQuery 
-  </title> 
-</head> 
-<body> 
-  <div align="center"> 
-    <form method="post" action="" enctype="multipart/form-data" id="myform"> 
-      <div> 
-        <input type="file" id="file" name="file" /> 
-        <input type="button" class="button" value="Upload" id="but_upload"> 
-      </div> 
-    </form> 
-  </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Upload to Google Drive</title>
+</head>
+<body>
+  <h1>Upload to Google Drive</h1>
+  <form action="/profile" id="get-file" method="post" enctype="multipart/form-data">
+    <input type="file" id="my-file" name="file-name" />
+    <input type="submit">
+  </form>
+  <button type="button" id="request-token">Click to log in to Flickr</button>
 </body>
-</html> 
+</html>
