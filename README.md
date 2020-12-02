@@ -16,15 +16,30 @@ websites, including storage sights and social media.
 * _Type "git clone https://github.com/MaxBrockbank/team_week.git" into command line and press ENTER._
 * _Navigate to "team_week" folder and enter "code ." into command line and press ENTER to open in VS Code._
 * _Create folder titled ".env" in root directory of program. This is needed to store the key for the API._
-    * _Create a  
+    * _Create a free acount with Cloudinary.com. You will be asked to verify your account through email._
+    * _Upon loging in, go to Account Details, and find the following details:
+        * _Cloud Name_ 
+        * _API Key_
+        * _API Secret_
+
+        Copy the string of characters after these categories into your ".env" file like so:
+        * CLOUD_NAME = (Cloud Name string)
+        * COMPRESS_KEY = (API Key string)
+        * COMPRESS_SECRET = (API Secret string)
+
+        For the final piece, go to Settings, click on the Upload tab, and scroll to Upload Presets. There likely will be a default setting (ml_default). Either
+        copy this, or create your own preset and use that. Place into ".env" like so:
+        * UPLOAD_PRESET = (Upload presets name)
+
 * _Type "npm install" into command line and press ENTER._
 * _Type "npm run build" into command line and press ENTER._
 * _Type "npm run start" into command line and press ENTER to run program._
 
 
 ## Technologies Used
-* _HTML, CSS, Javascript, Jquery._
+* _HTML, CSS, Javascript, Jquery, Adobe Photoshop._
 * _Node.js, CL, ESLint, Webpack, GitHub._
+* _Postman, 
 
 
 ## Known Bugs
