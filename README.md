@@ -1,14 +1,13 @@
-# _File Compression_
+# _Nucleus Compression_
 
-#### _A program to compress files for social media._ _Nov. 30, 2020_
+#### _A program to compress files for various websites._ _Dec. 2, 2020_
 
-#### By _**Garrett Brown**_
+#### By _**Chelsea Becker, Max Brockbank, Garrett Brown, Glen Buck, Brian Sturgis**_
 
 ## Description
-//Description goes here.
-
-## Specs
-
+Nucleus Compression is a program that allows a user to upload a photo, and compress it. 
+This is done in order to allow the photo to fit specifications for specific 
+websites, including storage sights and social media.
 
 ## Setup/Installation Requirements
 
@@ -16,15 +15,31 @@
 * _Navigate to Desktop._
 * _Type "git clone https://github.com/MaxBrockbank/team_week.git" into command line and press ENTER._
 * _Navigate to "team_week" folder and enter "code ." into command line and press ENTER to open in VS Code._
-*  // Insert API instructions HERE
+* _Create folder titled ".env" in root directory of program. This is needed to store the key for the API._
+    * _Create a free acount with Cloudinary.com. You will be asked to verify your account through email._
+    * _Upon loging in, go to Account Details, and find the following details:
+        * _Cloud Name_ 
+        * _API Key_
+        * _API Secret_
+
+        Copy the string of characters after these categories into your ".env" file like so:
+        * CLOUD_NAME = (Cloud Name string)
+        * COMPRESS_KEY = (API Key string)
+        * COMPRESS_SECRET = (API Secret string)
+
+        For the final piece, go to Settings, click on the Upload tab, and scroll to Upload Presets. There likely will be a default setting (ml_default). Either
+        copy this, or create your own preset and use that. Place into ".env" like so:
+        * UPLOAD_PRESET = (Upload presets name)
+
 * _Type "npm install" into command line and press ENTER._
 * _Type "npm run build" into command line and press ENTER._
-* _Type "npm run start" into command line and press ENTER to run program."
+* _Type "npm run start" into command line and press ENTER to run program._
 
 
 ## Technologies Used
-* _HTML, CSS, Javascript, Jquery._
+* _HTML, CSS, Javascript, Jquery, Adobe Photoshop._
 * _Node.js, CL, ESLint, Webpack, GitHub._
+* _Postman, 
 
 
 ## Known Bugs
