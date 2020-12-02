@@ -1,5 +1,5 @@
 {
-  "name": "exp-oauth2",
+  "name": "index",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -28,14 +28,15 @@
     "webpack-dev-server": "3.8.0"
   },
   "dependencies": {
-    "bootstrap": "^4.5.0",
-    "jquery": "^3.5.1",
-    "popper.js": "^1.16.1",
     "body-parser": "^1.19.0",
+    "bootstrap": "^4.5.0",
     "cookie-session": "^1.4.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "googleapis": "^39.2.0",
+    "jquery": "^3.5.1",
     "passport": "^0.4.1",
-    "passport-google-oauth20": "^2.0.0"
+    "passport-google-oauth20": "^2.0.0",
+    "popper.js": "^1.16.1"
   }
 }
