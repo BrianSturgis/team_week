@@ -17,19 +17,15 @@ export function openWidget(){
 	myWidget.open();
 }
 
-// Function to transform img aspect ratio and web opitmization 
+// Function to transform image file type as Jpeg and optimized for web
 export function imgTransform(url){
 	console.log(url.secure_url, url.bytes);
 	const compressedImg = cl.url(`${url.public_id}.jpg`, {quality: "auto", flags: "attachment"});
 	return compressedImg;
 }
 
+// Function to transform video file type as Mp4 for web opitmization
 export function vidTransform (url){
 	const compressedVid = cl.video_url(`${url.public_id}.mp4`, {quality: "auto", flags: "attachment"});
 	return compressedVid;
 }
-// Check File type of whats in the Local Storage
-
-// function typeCheck (){
-
-// }
