@@ -1,4 +1,4 @@
-import {cloudinary, Cloudinary} from "cloudinary-core";
+import {Cloudinary} from "cloudinary-core";
 
 // Set config parameters while instantiating a new Cloudinary class
 let cl = new Cloudinary({cloud_name:`${process.env.CLOUD_NAME}`, api_key:`${process.env.COMPRESS_KEY}`, api_secret:`${process.env.COMPRESS_SECRET}`, secure: true});
