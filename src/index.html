@@ -4,14 +4,14 @@
     <title>GREETINGS PROGRAMS</title>
   </head>
 <body>
-  <h3>UPLOAD A FILE</h3>
-  <div class="container" id="widget">
-    <button class="btn btn-dark" id="open-widget">Open Uploader</button>
-    <button class="btn btn-dark" id="transform">Compress File</button>
-  </div>
-  <ul id="response"></ul>
 
-  <form action="./upload-file" method="post" enctype="multipart/form-data">
+
+  <div class="container" id="widget">
+    <button class="btn" id="open-widget"></button>
+    <button class="btn" id="transform"></button>
+  </div>
+
+  <form action="./upload-file" method="post" enctype="multipart/form-data" id="form">
     <div class="drop-zone">
       <span class="drop-zone__prompt">Drop file here or click to upload</span>
       <input type="file" name="myFile" class="drop-zone__input">

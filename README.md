@@ -60,7 +60,7 @@ _Glen Buck <glenbuck503@gmail.com>_
 ## Legal
 *This program is available using an MIT License.*
 
-Copyright (c) 2020 **_Garrett Brown, Brian Sturgis, Max Brockbank, Chelsea Becker, Glen Buck _**
+Copyright (c) 2020 **_Garrett Brown, Brian Sturgis, Max Brockbank, Chelsea Becker, Glen Buck_**
 
 
 

@@ -76,6 +76,18 @@ document.querySelectorAll(".drop-zone__input").forEach(inputElement => {
 	});
 });
 
+async function checkFileType(fileInfo){
+	if((fileInfo.secure_url.match(/.mov|.mp4|.avi$/))){
+		const video = await vidTransform(fileInfo);
+		window.open(video);
+		$("#transform").hide();
+	} else if ((fileInfo.secure_url.match(/.jpe*g|.png|.gif|.svg$/))){
+		const photo = await imgTransform(fileInfo);
+		window.open(photo);
+		$("#transform").hide();
+	}
+}
+
 // Store HTML File Input in Variable
 $(document).ready(function(){
 	localStorage.clear();
@@ -85,16 +97,9 @@ $(document).ready(function(){
 		$("#transform").delay(1000).fadeIn();
 		//After widget is opened adds event listener to console log the value of resultInfo in local storage
 		$("#transform").on('click', async function(){
+			$("#form").show()
 			const fileInfo = JSON.parse(localStorage.getItem('resultInfo'));
-			if((fileInfo.secure_url.match(/.mov|.mp4|.avi$/))){
-				const video = await vidTransform(fileInfo);
-				window.open(video);
-				$("#transform").hide();
-			} else if ((fileInfo.secure_url.match(/.jpe*g|.png|.gif|.svg$/))){
-				const photo = await imgTransform(fileInfo);
-				window.open(photo);
-				$("#transform").hide();
-			}
+			checkFileType(fileInfo);
 		});
 	});
 });
