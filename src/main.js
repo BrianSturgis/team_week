@@ -75,6 +75,7 @@ document.querySelectorAll(".drop-zone__input").forEach(inputElement => {
 			updateThumbnail(dropZoneElement, e.dataTransfer.files[0]);
 			resultSize = e.dataTransfer.files[0];
 			let result = sizeDif(fileInfo.bytes, resultSize.size);
+
 			if ((fileInfo.secure_url.match(/.mov|.mp4|.avi$/))) {
 				$(".output").text(`Your video is ${result}% smaller!`);
 			} else if ((fileInfo.secure_url.match(/.jpe*g|.png|.gif|.svg$/))) {
