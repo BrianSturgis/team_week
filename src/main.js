@@ -5,11 +5,15 @@ import './css/styles.css';
 import {openWidget} from './compressAPI.js';
 import {imgTransform} from './compressAPI.js';
 import {vidTransform} from './compressAPI.js';
+import sizeDif from './sizeDif.js';
+
+let resultSize; 
+let fileInfo;
 
 function updateThumbnail(dropZoneElement, file) {
 	let thumbnailElement = dropZoneElement.querySelector(".drop-zone__thumb");
-	console.log(file);
-
+	// console.log(file);
+	
 	if (dropZoneElement.querySelector(".drop-zone__prompt")) {
 		dropZoneElement.querySelector(".drop-zone__prompt").remove();
 	}
@@ -22,7 +26,6 @@ function updateThumbnail(dropZoneElement, file) {
 
 	thumbnailElement.dataset.label = file.name;
 	
-
 	//show thumbnail for image files
 	if (file.type.startsWith("image/")) {
 		const reader = new FileReader();
@@ -37,10 +40,9 @@ function updateThumbnail(dropZoneElement, file) {
 	}
 }
 
-
 document.querySelectorAll(".drop-zone__input").forEach(inputElement => {
 	const dropZoneElement = inputElement.closest(".drop-zone");
-
+	
 	dropZoneElement.addEventListener("click", e => {
 		e;
 		inputElement.click();
@@ -71,6 +73,9 @@ document.querySelectorAll(".drop-zone__input").forEach(inputElement => {
 		if (e.dataTransfer.files.length) {
 			inputElement.files = e.dataTransfer.files;
 			updateThumbnail(dropZoneElement, e.dataTransfer.files[0]);
+			resultSize = e.dataTransfer.files[0];
+			let result = sizeDif(fileInfo.bytes, resultSize.size);
+			$(".output").text(`Your photo is ${result}% smaller!`);
 		}
 		dropZoneElement.classList.remove("drop-zone--over");
 	});
@@ -98,8 +103,9 @@ $(document).ready(function(){
 		//After widget is opened adds event listener to console log the value of resultInfo in local storage
 		$("#transform").on('click', async function(){
 			$("#form").show()
-			const fileInfo = JSON.parse(localStorage.getItem('resultInfo'));
+			fileInfo = JSON.parse(localStorage.getItem('resultInfo')); 
 			checkFileType(fileInfo);
+			console.log(fileInfo.bytes);
 		});
 	});
 });
