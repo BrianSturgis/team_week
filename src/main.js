@@ -75,7 +75,12 @@ document.querySelectorAll(".drop-zone__input").forEach(inputElement => {
 			updateThumbnail(dropZoneElement, e.dataTransfer.files[0]);
 			resultSize = e.dataTransfer.files[0];
 			let result = sizeDif(fileInfo.bytes, resultSize.size);
-			$(".output").text(`Your photo is ${result}% smaller!`);
+
+			if ((fileInfo.secure_url.match(/.mov|.mp4|.avi$/))) {
+				$(".output").text(`Your video is ${result}% smaller!`);
+			} else if ((fileInfo.secure_url.match(/.jpe*g|.png|.gif|.svg$/))) {
+				$(".output").text(`Your photo is ${result}% smaller!`);
+			}
 		}
 		dropZoneElement.classList.remove("drop-zone--over");
 	});
